@@ -1,0 +1,20 @@
+meta {
+  name: Banners Categories single item
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{base_url}}/v1/banners/categories/{{category_id}}
+  body: none
+  auth: inherit
+}
+
+vars:pre-request {
+  category_id: 3
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
