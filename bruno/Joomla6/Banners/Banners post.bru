@@ -1,0 +1,20 @@
+meta {
+  name: Banners
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{base_url}}/v1/banners
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {"type": 1, "name": "My banner", "alias": "my-banner", "state": 1, "catid": 3, "description": "Banner description here", "custombannercode": "Custom code here", "params": {"imageurl": "","width": "","height": "","alt": ""}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
