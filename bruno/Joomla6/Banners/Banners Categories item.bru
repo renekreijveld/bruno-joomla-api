@@ -1,17 +1,17 @@
 meta {
-  name: Banners Clients single item
+  name: Banners Categories item
   type: http
-  seq: 4
+  seq: 6
 }
 
 get {
-  url: {{base_url}}/v1/banners/clients/{{client_id}}
+  url: {{base_url}}/v1/banners/categories/{{category_id}}
   body: none
   auth: inherit
 }
 
 vars:pre-request {
-  client_id: 1
+  category_id: 3
 }
 
 settings {
