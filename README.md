@@ -35,7 +35,7 @@ Download this repository to your local machine. Unzip the file if needed. Once u
 5. With the collection open, at the top right you see a button **Joomla Web ...** Click on it to expand the dropdown. Click on **Joomla Web Services API**.
 6. Click on the button again to reopen the dropdown. Click on **Configure**.
 7. You see two variables: **base_url** and **api_key**. Modify the value of the base_url variable to match the URL of your Joomla website.
-8. Copy the API token from your Joomla user profile and paste it as the value of the api_key variable, for example ```https://www.myjoomlawebsite.com/api/index.php```. Keep the **/api/index.php** part at the end of the URL, as that is the endpoint for Joomla API requests.
+8. Copy the API token from your Joomla user profile and paste it as the value of the api_key variable, for example ```https://www.myjoomlawebsite.com/api/index.php```. Keep the ```/api/index.php``` part at the end of the URL, as that is the endpoint for Joomla API requests.
 9. Click the **Save** button at the bottom of the **Environments** tab.
 
 You now have set up the collection and you can start using the requests in the collection to make API calls to your Joomla website.
