@@ -38,3 +38,12 @@ Download this repository to your local machine. Unzip the file if needed. Once u
 
 You now have set up the collection and you can start using the requests in the collection to make API calls to your Joomla website.
 
+## Using the collection
+
+A simple test to see if the API endpoint are working is a GET on Config Application.
+
+1. In the left sidebar click on **Joomla Web Services API** to expand the collection.
+2. Click on **Config Application** to open the requests.
+3. Click on GET Get Global Configuration. The URL belonging to this request is ```{{base_url}}/v1/config/application```.
+4. Click on the right arrow at the top right to send the request. If all is working you should see a response with status 200 and the body of the response should contain the global configuration of your Joomla website in JSON format.
+
