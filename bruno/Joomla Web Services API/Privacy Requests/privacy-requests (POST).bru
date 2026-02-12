@@ -1,0 +1,49 @@
+meta {
+  name: privacy/requests (POST)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/privacy/requests
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "email": "",
+    "request_type": ""
+  }
+}
+
+example {
+  name: 200 Response (privacy/requests)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/privacy/requests
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "email": "test@example.org",
+        "request_type": "export"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

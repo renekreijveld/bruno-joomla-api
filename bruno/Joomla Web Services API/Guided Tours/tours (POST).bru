@@ -1,0 +1,63 @@
+meta {
+  name: tours (POST)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/tours
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "access": 0,
+    "autostart": 0,
+    "description": "",
+    "extensions": "",
+    "language": "",
+    "published": 0,
+    "title": "",
+    "uid": "",
+    "url": ""
+  }
+}
+
+example {
+  name: 200 Response (tours)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/tours
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "access": 1,
+        "autostart": 0,
+        "description": "3rd generation",
+        "extensions": "['*']",
+        "language": "*",
+        "published": 1,
+        "title": "Handmade Frozen Shirt",
+        "uid": "9aa2d6cc-78b1-48e3-9cc8-463977696382",
+        "url": "administrator/index.php?option=com_content&view=articles"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

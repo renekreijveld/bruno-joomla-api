@@ -1,0 +1,49 @@
+meta {
+  name: menus/{app}/{menu_id} (PATCH)
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/v1/menus/{{app}}/{{menu_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "menutype": "",
+    "title": ""
+  }
+}
+
+example {
+  name: 200 Response (menus/{app}/{menu_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/menus/{{app}}/{{menu_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "menutype": "menu",
+        "title": "New Menu"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

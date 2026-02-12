@@ -1,0 +1,36 @@
+meta {
+  name: Delete Banners Versions
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{base_url}}/v1/banners/{{banner_id}}/contenthistory
+  body: none
+  auth: inherit
+}
+
+example {
+  name: 200 Response
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/banners/{{banner_id}}/contenthistory
+    method: DELETE
+    mode: none
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

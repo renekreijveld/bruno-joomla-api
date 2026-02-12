@@ -1,0 +1,53 @@
+meta {
+  name: messages/{message_id} (PATCH)
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/v1/messages/{{message_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "message": "",
+    "subject": "",
+    "user_id_from": 0,
+    "user_id_to": 0
+  }
+}
+
+example {
+  name: 200 Response (messages/{message_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/messages/{{message_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "message": "<p>new text</p>",
+        "subject": "new text",
+        "user_id_from": 773,
+        "user_id_to": 772
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

@@ -1,0 +1,49 @@
+meta {
+  name: tags/{tag_id} (PATCH)
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/v1/tags/{{tag_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "alias": "",
+    "title": ""
+  }
+}
+
+example {
+  name: 200 Response (tags/{tag_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/tags/{{tag_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "alias": "test",
+        "title": "new title"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

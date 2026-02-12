@@ -1,0 +1,55 @@
+meta {
+  name: users/{user_id} (PATCH)
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/v1/users/{{user_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "email": "",
+    "groups": [],
+    "name": "",
+    "username": ""
+  }
+}
+
+example {
+  name: 200 Response (users/{user_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/users/{{user_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "email": "new@example.org",
+        "groups": [
+          2
+        ],
+        "name": "name",
+        "username": "username"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

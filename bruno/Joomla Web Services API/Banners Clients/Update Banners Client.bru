@@ -1,0 +1,51 @@
+meta {
+  name: Update Banners Client
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/v1/banners/clients/{{client_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "contact": "",
+    "email": "",
+    "name": ""
+  }
+}
+
+example {
+  name: 200 Response (banners/clients/1)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/banners/clients/{{client_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "contact": "Updated ContactpersonName",
+        "email": "newemail@example.org",
+        "name": "Updated ClientName"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

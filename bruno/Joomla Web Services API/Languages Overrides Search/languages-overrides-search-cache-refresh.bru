@@ -1,0 +1,36 @@
+meta {
+  name: languages/overrides/search/cache/refresh
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/languages/overrides/search/cache/refresh
+  body: none
+  auth: inherit
+}
+
+example {
+  name: 200 Response
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/languages/overrides/search/cache/refresh
+    method: POST
+    mode: none
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

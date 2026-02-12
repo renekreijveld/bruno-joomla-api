@@ -1,0 +1,95 @@
+meta {
+  name: fields/contacts/contact/{field_id} (PATCH)
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/v1/fields/contacts/contact/{{field_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "default_value": "",
+    "description": "",
+    "label": "",
+    "name": "",
+    "note": "",
+    "title": "",
+    "type": ""
+  }
+}
+
+example {
+  name: 200 Response (fields/contacts/contact/{field_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/fields/contacts/contact/{{field_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "default_value": "",
+        "description": "Some New Text",
+        "label": "contact field",
+        "name": "contact-field",
+        "note": "",
+        "title": "new contact field",
+        "type": "text"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: 200 Response (fields/contacts/mail/{field_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/fields/contacts/contact/{{field_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "default_value": "",
+        "description": "Some New Text",
+        "label": "contact field",
+        "name": "contact-field",
+        "note": "",
+        "title": "new contact field",
+        "type": "text"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

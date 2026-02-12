@@ -1,0 +1,91 @@
+meta {
+  name: users (POST)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/users
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "block": 0,
+    "email": "",
+    "groups": [],
+    "id": 0,
+    "lastResetTime": "",
+    "lastvisitDate": "",
+    "name": "",
+    "params": {
+      "admin_language": "",
+      "admin_style": "",
+      "editor": "",
+      "helpsite": "",
+      "language": "",
+      "timezone": ""
+    },
+    "password": "",
+    "password2": "",
+    "registerDate": "",
+    "requireReset": false,
+    "resetCount": 0,
+    "sendEmail": false,
+    "username": ""
+  }
+}
+
+example {
+  name: 200 Response (users)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/users
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "block": 0,
+        "email": "test@example.org",
+        "groups": [
+          2
+        ],
+        "id": 0,
+        "lastResetTime": "",
+        "lastvisitDate": "",
+        "name": "nnn",
+        "params": {
+          "admin_language": "",
+          "admin_style": "",
+          "editor": "",
+          "helpsite": "",
+          "language": "",
+          "timezone": ""
+        },
+        "password": "qwerty",
+        "password2": "qwerty",
+        "registerDate": "",
+        "requireReset": 0,
+        "resetCount": 0,
+        "sendEmail": 0,
+        "username": "ad"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

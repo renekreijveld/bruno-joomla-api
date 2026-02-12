@@ -1,0 +1,49 @@
+meta {
+  name: tours/{tour_id}/steps/{step_id} Copy
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/v1/tours/{{tour_id}}/steps/{{step_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "description": "",
+    "title": ""
+  }
+}
+
+example {
+  name: 200 Response (tours/{tour_id}/steps/{step_id} Copy)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/tours/{{tour_id}}/steps/{{step_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "description": "Updated web-enabled",
+        "title": "Updated Stracke - VonRueden"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

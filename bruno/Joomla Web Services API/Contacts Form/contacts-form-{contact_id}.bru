@@ -1,0 +1,53 @@
+meta {
+  name: contacts/form/{contact_id}
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/v1/contacts/form/{{contact_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "contact_email": "",
+    "contact_message": "",
+    "contact_name": "",
+    "contact_subject": ""
+  }
+}
+
+example {
+  name: 200 Response (contacts/form/{contact_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/contacts/form/{{contact_id}}
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "contact_email": "email@example.org",
+        "contact_message": "some text",
+        "contact_name": "name",
+        "contact_subject": "subject"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

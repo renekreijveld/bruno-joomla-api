@@ -1,0 +1,36 @@
+meta {
+  name: extensions
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/v1/extensions
+  body: none
+  auth: inherit
+}
+
+example {
+  name: 200 Response
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/extensions
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

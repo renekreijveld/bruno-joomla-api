@@ -1,0 +1,67 @@
+meta {
+  name: content/categories (POST)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/content/categories
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "access": 0,
+    "alias": "",
+    "extension": "",
+    "language": "",
+    "note": "",
+    "params": {
+      "workflow_id": 0
+    },
+    "parent_id": 0,
+    "published": 0,
+    "title": ""
+  }
+}
+
+example {
+  name: 200 Response (content/categories)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/content/categories
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "access": 1,
+        "alias": "8c3c6268-b662-44b6-b9ab-47aa67ef3701",
+        "extension": "com_content",
+        "language": "*",
+        "note": "",
+        "params": {
+          "workflow_id": 1
+        },
+        "parent_id": 1,
+        "published": 1,
+        "title": "Dynamic Brand Consultant"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

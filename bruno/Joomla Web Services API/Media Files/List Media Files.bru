@@ -1,0 +1,77 @@
+meta {
+  name: List Media Files
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/v1/media/files
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~filter[search]: 
+}
+
+example {
+  name: 200 Response
+  description: Media files listed successfully. Todo: check when path is to single file
+  
+  request: {
+    url: {{base_url}}/v1/media/files
+    method: GET
+    mode: none
+    params:query: {
+      ~filter[search]: 
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "links": {
+            "self": ""
+          },
+          "data": [
+            {
+              "type": "",
+              "id": "",
+              "attributes": {
+                "type": "",
+                "name": "",
+                "path": "",
+                "extension": "",
+                "size": 0,
+                "mime_type": "",
+                "width": 0,
+                "height": 0,
+                "create_date": "",
+                "create_date_formatted": "",
+                "modified_date": "",
+                "modified_date_formatted": "",
+                "thumb_path": "",
+                "content": "",
+                "adapter": ""
+              }
+            }
+          ],
+          "meta": {
+            "total-pages": 0
+          }
+        }
+      '''
+    }
+  }
+}

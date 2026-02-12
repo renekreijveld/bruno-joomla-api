@@ -1,0 +1,57 @@
+meta {
+  name: Add Banners Client
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/banners/clients
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "contact": "",
+    "email": "",
+    "extrainfo": "",
+    "metakey": "",
+    "name": "",
+    "state": 0
+  }
+}
+
+example {
+  name: 200 Response (banners/clients)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/banners/clients
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "contact": "Some ContactpersonName",
+        "email": "somename@example.org",
+        "extrainfo": "Some extra info about this Banners Client.",
+        "metakey": "some keywords",
+        "name": "Name of client",
+        "state": 1
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

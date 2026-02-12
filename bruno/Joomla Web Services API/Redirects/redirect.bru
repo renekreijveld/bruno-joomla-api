@@ -1,0 +1,59 @@
+meta {
+  name: redirect
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/v1/redirect
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "comment": "",
+    "header": 0,
+    "hits": 0,
+    "new_url": "",
+    "old_url": "",
+    "published": 0,
+    "referer": ""
+  }
+}
+
+example {
+  name: 200 Response (redirect)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/redirect
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "comment": "",
+        "header": 301,
+        "hits": 0,
+        "new_url": "/content/art/99",
+        "old_url": "/content/art/12",
+        "published": 1,
+        "referer": ""
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

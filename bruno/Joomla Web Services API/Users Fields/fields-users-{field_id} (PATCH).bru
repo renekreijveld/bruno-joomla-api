@@ -1,0 +1,59 @@
+meta {
+  name: fields/users/{field_id} (PATCH)
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/v1/fields/users/{{field_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "default_value": "",
+    "description": "",
+    "label": "",
+    "name": "",
+    "note": "",
+    "title": "",
+    "type": ""
+  }
+}
+
+example {
+  name: 200 Response (fields/users/{field_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/fields/users/{{field_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "default_value": "",
+        "description": "Some New Text",
+        "label": "user field",
+        "name": "user-field",
+        "note": "",
+        "title": "new user field",
+        "type": "text"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

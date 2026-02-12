@@ -1,0 +1,49 @@
+meta {
+  name: templates/styles/{app}/{template_style_id} (PATCH)
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{base_url}}/v1/templates/styles/{{app}}/{{template_style_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "template": "",
+    "title": ""
+  }
+}
+
+example {
+  name: 200 Response (templates/styles/{app}/{template_style_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/templates/styles/{{app}}/{{template_style_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "template": "cassiopeia",
+        "title": "new cassiopeia - Default"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

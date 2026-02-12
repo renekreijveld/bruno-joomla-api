@@ -1,0 +1,140 @@
+meta {
+  name: Add Media File
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/media/files
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "path": "",
+    "content": ""
+  }
+}
+
+example {
+  name: 200 Response
+  description: Succesful media file upload.
+  
+  request: {
+    url: {{base_url}}/v1/media/files
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "path": "",
+        "content": ""
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "links": {
+            "self": ""
+          },
+          "data": {
+            "type": "",
+            "id": "",
+            "attributes": {
+              "type": "",
+              "name": "",
+              "path": "",
+              "extension": "",
+              "size": 0,
+              "mime_type": "",
+              "width": 0,
+              "height": 0,
+              "create_date": "",
+              "create_date_formatted": "",
+              "modified_date": "",
+              "modified_date_formatted": "",
+              "thumb_path": "",
+              "content": "",
+              "adapter": ""
+            }
+          }
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: 413 Response
+  description: Payload too large.
+  
+  request: {
+    url: {{base_url}}/v1/media/files
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "path": "",
+        "content": ""
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 413
+      text: Payload Too Large
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: 415 Response
+  description: Unsupported media type.
+  
+  request: {
+    url: {{base_url}}/v1/media/files
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "path": "",
+        "content": ""
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 415
+      text: Unsupported Media Type
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

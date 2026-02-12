@@ -1,0 +1,59 @@
+meta {
+  name: menus/{app}/items/{menu_item_id} (PATCH)
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{base_url}}/v1/menus/{{app}}/items/{{menu_item_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "component_id": "",
+    "language": "",
+    "link": "",
+    "menutype": "",
+    "note": "",
+    "title": "",
+    "type": ""
+  }
+}
+
+example {
+  name: 200 Response (menus/{app}/items/{menu_item_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/menus/{{app}}/items/{{menu_item_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "component_id": "20",
+        "language": "*",
+        "link": "index.php?option=com_content&view=form&layout=edit",
+        "menutype": "mainmenu",
+        "note": "",
+        "title": "new title",
+        "type": "component"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

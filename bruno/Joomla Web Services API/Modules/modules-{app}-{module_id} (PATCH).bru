@@ -1,0 +1,59 @@
+meta {
+  name: modules/{app}/{module_id} (PATCH)
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{base_url}}/v1/modules/{{app}}/{{module_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "access": "",
+    "client_id": "",
+    "language": "",
+    "module": "",
+    "note": "",
+    "ordering": "",
+    "title": ""
+  }
+}
+
+example {
+  name: 200 Response (modules/{app}/{module_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/modules/{{app}}/{{module_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "access": "1",
+        "client_id": "0",
+        "language": "*",
+        "module": "mod_articles_archive",
+        "note": "",
+        "ordering": "1",
+        "title": "New Title"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

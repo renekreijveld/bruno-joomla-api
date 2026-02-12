@@ -1,0 +1,40 @@
+meta {
+  name: Get Component Configuration
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/v1/config/{{component_name}}
+  body: none
+  auth: inherit
+}
+
+vars:pre-request {
+  component_name: com_contacts
+}
+
+example {
+  name: 200 Response
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/config/{{component_name}}
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

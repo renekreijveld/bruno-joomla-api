@@ -1,0 +1,109 @@
+meta {
+  name: Update Media File
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/v1/media/files/{{file_path}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "path": "",
+    "content": ""
+  }
+}
+
+example {
+  name: 200 Response
+  description: Succesful media file update.
+  
+  request: {
+    url: {{base_url}}/v1/media/files/{{file_path}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "path": "",
+        "content": ""
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "links": {
+            "self": ""
+          },
+          "data": {
+            "type": "",
+            "id": "",
+            "attributes": {
+              "type": "",
+              "name": "",
+              "path": "",
+              "extension": "",
+              "size": 0,
+              "mime_type": "",
+              "width": 0,
+              "height": 0,
+              "create_date": "",
+              "create_date_formatted": "",
+              "modified_date": "",
+              "modified_date_formatted": "",
+              "thumb_path": "",
+              "content": "",
+              "adapter": ""
+            }
+          }
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: 404 Response
+  description: Media file not found.
+  
+  request: {
+    url: {{base_url}}/v1/media/files/{{file_path}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "path": "",
+        "content": ""
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 404
+      text: Not Found
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

@@ -1,0 +1,75 @@
+meta {
+  name: tours/{tour_id}/steps (POST)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/tours/{{tour_id}}/steps
+  body: json
+  auth: inherit
+}
+
+headers {
+  ~cookie: 
+}
+
+body:json {
+  {
+    "created": "",
+    "description": "",
+    "interactive_type": 0,
+    "language": "",
+    "modified": "",
+    "position": "",
+    "published": 0,
+    "target": "",
+    "title": "",
+    "type": 0,
+    "url": ""
+  }
+}
+
+example {
+  name: 200 Response (tours/{tour_id}/steps)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/tours/{{tour_id}}/steps
+    method: POST
+    mode: json
+    headers: {
+      ~cookie: 
+    }
+  
+    body:json: {
+      {
+        "created": "2024-11-04 22:00:00",
+        "description": "asynchronous",
+        "interactive_type": 1,
+        "language": "*",
+        "modified": "2024-11-04 22:00:00",
+        "position": "top",
+        "published": 1,
+        "target": "#testElement",
+        "title": "Auer Inc",
+        "type": 2,
+        "url": "administrator/index.php?option=com_content&view=articles"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

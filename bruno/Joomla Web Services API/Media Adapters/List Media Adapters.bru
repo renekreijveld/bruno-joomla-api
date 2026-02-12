@@ -1,0 +1,58 @@
+meta {
+  name: List Media Adapters
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/v1/media/adapters
+  body: none
+  auth: inherit
+}
+
+example {
+  name: 200 Response
+  description: Media adapters retrieved successfully.
+  
+  request: {
+    url: {{base_url}}/v1/media/adapters
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "links": {
+            "self": ""
+          },
+          "data": [
+            {
+              "type": "",
+              "id": "",
+              "attributes": {
+                "provider_id": "",
+                "name": "",
+                "path": ""
+              }
+            }
+          ],
+          "meta": {
+            "total-pages": 0
+          }
+        }
+      '''
+    }
+  }
+}

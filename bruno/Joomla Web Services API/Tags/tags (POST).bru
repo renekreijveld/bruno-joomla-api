@@ -1,0 +1,65 @@
+meta {
+  name: tags (POST)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/tags
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "access": 0,
+    "access_title": "",
+    "alias": "",
+    "description": "",
+    "language": "",
+    "note": "",
+    "parent_id": 0,
+    "path": "",
+    "published": 0,
+    "title": ""
+  }
+}
+
+example {
+  name: 200 Response (tags)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/tags
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "access": 1,
+        "access_title": "Public",
+        "alias": "test",
+        "description": "",
+        "language": "*",
+        "note": "",
+        "parent_id": 1,
+        "path": "test",
+        "published": 1,
+        "title": "test"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

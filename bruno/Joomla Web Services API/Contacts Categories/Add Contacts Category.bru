@@ -1,0 +1,67 @@
+meta {
+  name: Add Contacts Category
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/contacts/categories
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "access": 0,
+    "alias": "",
+    "extension": "",
+    "language": "",
+    "note": "",
+    "params": {
+      "workflow_id": 0
+    },
+    "parent_id": 0,
+    "published": 0,
+    "title": ""
+  }
+}
+
+example {
+  name: 200 Response (contacts/categories)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/contacts/categories
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "access": 1,
+        "alias": "024a3408-dee0-45b9-965c-668aa89a0b9b",
+        "extension": "com_contacts",
+        "language": "*",
+        "note": "",
+        "params": {
+          "workflow_id": 1
+        },
+        "parent_id": 1,
+        "published": 1,
+        "title": "Direct Quality Representative"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

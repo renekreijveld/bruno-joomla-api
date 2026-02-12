@@ -1,0 +1,70 @@
+meta {
+  name: Add Banner
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/banners
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "alias": "",
+    "catid": 0,
+    "clicks": 0,
+    "custombannercode": "",
+    "description": "",
+    "metakey": "",
+    "name": "",
+    "params": {
+      "alt": "",
+      "height": 0,
+      "imageurl": "",
+      "width": 0
+    }
+  }
+}
+
+example {
+  name: 200 Response (banners)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/banners
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "catid": 3,
+        "clicks": 0,
+        "custombannercode": "",
+        "description": "Some description of this Banner.",
+        "metakey": "some keywords",
+        "name": "Name for this Banner",
+        "params": {
+          "alt": "Managed user-facing alliance",
+          "height": 480,
+          "imageurl": "images/banners/banner.jpg",
+          "width": 640
+        }
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

@@ -1,0 +1,40 @@
+meta {
+  name: Get Banner
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/v1/banners/{{banner_id}}
+  body: none
+  auth: inherit
+}
+
+vars:pre-request {
+  banner_id: 3
+}
+
+example {
+  name: 200 Response
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/banners/{{banner_id}}
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

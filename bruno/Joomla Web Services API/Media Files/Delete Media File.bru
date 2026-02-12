@@ -1,0 +1,61 @@
+meta {
+  name: Delete Media File
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{base_url}}/v1/media/files/{{file_path}}
+  body: none
+  auth: inherit
+}
+
+example {
+  name: 204 Response
+  description: Media file deleted successfully, but no content is returned
+  
+  request: {
+    url: {{base_url}}/v1/media/files/{{file_path}}
+    method: DELETE
+    mode: none
+  }
+  
+  response: {
+    status: {
+      code: 204
+      text: No Content
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: 404 Response
+  description: Media file not found.
+  
+  request: {
+    url: {{base_url}}/v1/media/files/{{file_path}}
+    method: DELETE
+    mode: none
+  }
+  
+  response: {
+    status: {
+      code: 404
+      text: Not Found
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

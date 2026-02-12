@@ -1,0 +1,129 @@
+meta {
+  name: menus/{app}/items (POST)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/menus/{{app}}/items
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "access": "",
+    "alias": "",
+    "associations": {
+      "en-GB": "",
+      "fr-FR": ""
+    },
+    "browserNav": "",
+    "component_id": "",
+    "home": "",
+    "language": "",
+    "link": "",
+    "menutype": "",
+    "note": "",
+    "params": {
+      "cancel_redirect_menuitem": "",
+      "catid": "",
+      "custom_cancel_redirect": "",
+      "enable_category": "",
+      "menu-anchor_css": "",
+      "menu-anchor_title": "",
+      "menu-meta_description": "",
+      "menu-meta_keywords": "",
+      "menu_image": "",
+      "menu_image_css": "",
+      "menu_show": "",
+      "menu_text": "",
+      "page_heading": "",
+      "page_title": "",
+      "pageclass_sfx": "",
+      "redirect_menuitem": "",
+      "robots": "",
+      "show_page_heading": ""
+    },
+    "parent_id": "",
+    "publish_down": "",
+    "publish_up": "",
+    "published": "",
+    "template_style_id": "",
+    "title": "",
+    "toggle_modules_assigned": "",
+    "toggle_modules_published": "",
+    "type": ""
+  }
+}
+
+example {
+  name: 200 Response (menus/{app}/items)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/menus/{{app}}/items
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "access": "1",
+        "alias": "",
+        "associations": {
+          "en-GB": "",
+          "fr-FR": ""
+        },
+        "browserNav": "0",
+        "component_id": "20",
+        "home": "0",
+        "language": "*",
+        "link": "index.php?option=com_content&view=form&layout=edit",
+        "menutype": "mainmenu",
+        "note": "",
+        "params": {
+          "cancel_redirect_menuitem": "",
+          "catid": "",
+          "custom_cancel_redirect": "0",
+          "enable_category": "0",
+          "menu-anchor_css": "",
+          "menu-anchor_title": "",
+          "menu-meta_description": "",
+          "menu-meta_keywords": "",
+          "menu_image": "",
+          "menu_image_css": "",
+          "menu_show": "1",
+          "menu_text": "1",
+          "page_heading": "",
+          "page_title": "",
+          "pageclass_sfx": "",
+          "redirect_menuitem": "",
+          "robots": "",
+          "show_page_heading": ""
+        },
+        "parent_id": "1",
+        "publish_down": "",
+        "publish_up": "",
+        "published": "1",
+        "template_style_id": "0",
+        "title": "title",
+        "toggle_modules_assigned": "1",
+        "toggle_modules_published": "1",
+        "type": "component"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

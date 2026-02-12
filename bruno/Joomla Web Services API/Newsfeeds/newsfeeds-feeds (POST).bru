@@ -1,0 +1,121 @@
+meta {
+  name: newsfeeds/feeds (POST)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/newsfeeds/feeds
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "access": 0,
+    "alias": "",
+    "catid": 0,
+    "description": "",
+    "images": {
+      "float_first": "",
+      "float_second": "",
+      "image_first": "",
+      "image_first_alt": "",
+      "image_first_caption": "",
+      "image_second": "",
+      "image_second_alt": "",
+      "image_second_caption": ""
+    },
+    "language": "",
+    "link": "",
+    "metadata": {
+      "hits": "",
+      "rights": "",
+      "robots": "",
+      "tags": {
+        "tags": "",
+        "typeAlias": ""
+      }
+    },
+    "metadesc": "",
+    "metakey": "",
+    "name": "",
+    "ordering": 0,
+    "params": {
+      "feed_character_count": "",
+      "feed_display_order": "",
+      "newsfeed_layout": "",
+      "show_feed_description": "",
+      "show_feed_image": "",
+      "show_item_description": ""
+    },
+    "published": 0
+  }
+}
+
+example {
+  name: 200 Response (newsfeeds/feeds)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/newsfeeds/feeds
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "access": 1,
+        "alias": "alias",
+        "catid": 5,
+        "description": "",
+        "images": {
+          "float_first": "",
+          "float_second": "",
+          "image_first": "",
+          "image_first_alt": "",
+          "image_first_caption": "",
+          "image_second": "",
+          "image_second_alt": "",
+          "image_second_caption": ""
+        },
+        "language": "*",
+        "link": "https://samoylov/joomla/gsoc19_webservices/index.php",
+        "metadata": {
+          "hits": "",
+          "rights": "",
+          "robots": "",
+          "tags": {
+            "tags": "",
+            "typeAlias": null
+          }
+        },
+        "metadesc": "",
+        "metakey": "",
+        "name": "Name",
+        "ordering": 1,
+        "params": {
+          "feed_character_count": "",
+          "feed_display_order": "",
+          "newsfeed_layout": "",
+          "show_feed_description": "",
+          "show_feed_image": "",
+          "show_item_description": ""
+        },
+        "published": 1
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

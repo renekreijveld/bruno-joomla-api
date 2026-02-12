@@ -1,0 +1,53 @@
+meta {
+  name: Update Banners Category
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/v1/banners/categories/{{category_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "alias": "",
+    "note": "",
+    "parent_id": 0,
+    "title": ""
+  }
+}
+
+example {
+  name: 200 Response (banners/categories/{category_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/banners/categories/{{category_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "alias": "updated-category",
+        "note": "Updated note for this category.",
+        "parent_id": 1,
+        "title": "Updated Category name"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

@@ -1,0 +1,36 @@
+meta {
+  name: privacy/consents/{consent_id}
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/v1/privacy/consents/{{consent_id}}
+  body: none
+  auth: inherit
+}
+
+example {
+  name: 200 Response
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/privacy/consents/{{consent_id}}
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

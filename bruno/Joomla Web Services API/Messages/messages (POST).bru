@@ -1,0 +1,55 @@
+meta {
+  name: messages (POST)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/messages
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "message": "",
+    "state": 0,
+    "subject": "",
+    "user_id_from": 0,
+    "user_id_to": 0
+  }
+}
+
+example {
+  name: 200 Response (messages)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/messages
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "message": "<p>text</p>",
+        "state": 0,
+        "subject": "text",
+        "user_id_from": 773,
+        "user_id_to": 772
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

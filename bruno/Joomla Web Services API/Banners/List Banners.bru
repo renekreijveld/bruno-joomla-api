@@ -1,0 +1,36 @@
+meta {
+  name: List Banners
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/v1/banners
+  body: none
+  auth: inherit
+}
+
+example {
+  name: 200 Response
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/banners
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

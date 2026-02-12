@@ -1,0 +1,36 @@
+meta {
+  name: newsfeeds/feeds/{feed_id} (DELETE)
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{base_url}}/v1/newsfeeds/feeds/{{feed_id}}
+  body: none
+  auth: inherit
+}
+
+example {
+  name: 200 Response
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/newsfeeds/feeds/{{feed_id}}
+    method: DELETE
+    mode: none
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

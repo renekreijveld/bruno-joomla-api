@@ -1,0 +1,49 @@
+meta {
+  name: redirects/{redirect_id} (PATCH)
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{base_url}}/v1/redirects/{{redirect_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "new_url": "",
+    "old_url": ""
+  }
+}
+
+example {
+  name: 200 Response (redirects/{redirect_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/redirects/{{redirect_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "new_url": "/content/art/4",
+        "old_url": "/content/art/132"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

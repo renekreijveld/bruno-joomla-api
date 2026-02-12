@@ -1,0 +1,71 @@
+meta {
+  name: fields/groups/users (POST)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/fields/groups/users
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "access": 0,
+    "checked_out": 0,
+    "context": "",
+    "created_by": 0,
+    "description": "",
+    "language": "",
+    "note": "",
+    "params": {
+      "display_readonly": ""
+    },
+    "required": 0,
+    "state": 0,
+    "title": ""
+  }
+}
+
+example {
+  name: 200 Response (fields/groups/users)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/fields/groups/users
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "access": 1,
+        "checked_out": 0,
+        "context": "com_users.user",
+        "created_by": 0,
+        "description": "",
+        "language": "*",
+        "note": "",
+        "params": {
+          "display_readonly": "1"
+        },
+        "required": 0,
+        "state": 1,
+        "title": "user field group"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

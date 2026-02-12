@@ -1,0 +1,69 @@
+meta {
+  name: languages/content (POST)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/languages/content
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "access": 0,
+    "description": "",
+    "image": "",
+    "lang_code": "",
+    "metadesc": "",
+    "metakey": "",
+    "ordering": 0,
+    "published": 0,
+    "sef": "",
+    "sitename": "",
+    "title": "",
+    "title_native": ""
+  }
+}
+
+example {
+  name: 200 Response (languages/content)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/languages/content
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "access": 1,
+        "description": "",
+        "image": "fr_FR",
+        "lang_code": "fr-FR",
+        "metadesc": "",
+        "metakey": "",
+        "ordering": 1,
+        "published": 0,
+        "sef": "fk",
+        "sitename": "",
+        "title": "French (FR)",
+        "title_native": "Français (France)"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

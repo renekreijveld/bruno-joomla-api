@@ -1,0 +1,49 @@
+meta {
+  name: plugins
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/v1/plugins
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~filter[element]: 
+  ~filter[status]: 
+  ~filter[search]: 
+  ~filter[type]: 
+}
+
+example {
+  name: 200 Response
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/plugins
+    method: GET
+    mode: none
+    params:query: {
+      ~filter[element]: 
+      ~filter[status]: 
+      ~filter[search]: 
+      ~filter[type]: 
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

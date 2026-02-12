@@ -1,0 +1,49 @@
+meta {
+  name: Keep Banners Version
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{base_url}}/v1/banners/{{version_id}}/contenthistory/keep
+  body: json
+  auth: inherit
+}
+
+params:path {
+  version_id: 
+}
+
+example {
+  name: 200 Response (banners/1/contenthistory/keep)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/banners/{{version_id}}/contenthistory/keep
+    method: PATCH
+    mode: json
+    params:path: {
+      version_id: 
+    }
+  
+    body:json: {
+      {
+        "version_note": "Some note for this version."
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

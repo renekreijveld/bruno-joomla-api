@@ -1,0 +1,53 @@
+meta {
+  name: content/categories/{category_id} (PATCH)
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/v1/content/categories/{{category_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "alias": "",
+    "note": "",
+    "parent_id": 0,
+    "title": ""
+  }
+}
+
+example {
+  name: 200 Response (content/categories/{category_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/content/categories/{{category_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "alias": "4c024085-71fe-4c56-8da9-e1694f8c8692",
+        "note": "Animi deserunt ratione dolor sit officia asperiores odit.",
+        "parent_id": 1,
+        "title": "Intelligent Cotton Fish"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

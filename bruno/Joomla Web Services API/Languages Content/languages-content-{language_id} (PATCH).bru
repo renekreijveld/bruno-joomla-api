@@ -1,0 +1,59 @@
+meta {
+  name: languages/content/{language_id} (PATCH)
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{base_url}}/v1/languages/content/{{language_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "description": "",
+    "lang_code": "",
+    "metadesc": "",
+    "metakey": "",
+    "sitename": "",
+    "title": "",
+    "title_native": ""
+  }
+}
+
+example {
+  name: 200 Response (languages/content/{language_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/languages/content/{{language_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "description": "",
+        "lang_code": "en-GB",
+        "metadesc": "",
+        "metakey": "",
+        "sitename": "",
+        "title": "English (en-GB)",
+        "title_native": "English (United Kingdom)"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

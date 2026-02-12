@@ -1,0 +1,107 @@
+meta {
+  name: fields/content/articles (POST)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/fields/content/articles
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "access": 0,
+    "context": "",
+    "default_value": "",
+    "description": "",
+    "fieldparams": {
+      "filter": "",
+      "maxlength": 0
+    },
+    "group_id": 0,
+    "label": "",
+    "language": "",
+    "name": "",
+    "note": "",
+    "params": {
+      "class": "",
+      "display": "",
+      "display_readonly": "",
+      "hint": "",
+      "label_class": "",
+      "label_render_class": "",
+      "layout": "",
+      "prefix": "",
+      "render_class": "",
+      "show_on": "",
+      "showlabel": "",
+      "suffix": ""
+    },
+    "required": 0,
+    "state": 0,
+    "title": "",
+    "type": ""
+  }
+}
+
+example {
+  name: 200 Response (fields/content/articles)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/fields/content/articles
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "access": 1,
+        "context": "com_content.article",
+        "default_value": "",
+        "description": "",
+        "fieldparams": {
+          "filter": "alnum",
+          "maxlength": 40
+        },
+        "group_id": 0,
+        "label": "article field",
+        "language": "*",
+        "name": "article-field",
+        "note": "",
+        "params": {
+          "class": "",
+          "display": "2",
+          "display_readonly": "2",
+          "hint": "",
+          "label_class": "",
+          "label_render_class": "",
+          "layout": "",
+          "prefix": "",
+          "render_class": "",
+          "show_on": "",
+          "showlabel": "1",
+          "suffix": ""
+        },
+        "required": 0,
+        "state": 1,
+        "title": "article field",
+        "type": "text"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

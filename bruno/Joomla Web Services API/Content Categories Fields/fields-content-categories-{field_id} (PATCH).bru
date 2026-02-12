@@ -1,0 +1,59 @@
+meta {
+  name: fields/content/categories/{field_id} (PATCH)
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/v1/fields/content/categories/{{field_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "default_value": "",
+    "description": "",
+    "label": "",
+    "name": "",
+    "note": "",
+    "title": "",
+    "type": ""
+  }
+}
+
+example {
+  name: 200 Response (fields/content/categories/{field_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/fields/content/categories/{{field_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "default_value": "",
+        "description": "Some New Text",
+        "label": "content category field",
+        "name": "content-category-field",
+        "note": "",
+        "title": "new content category field",
+        "type": "text"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

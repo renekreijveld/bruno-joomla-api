@@ -1,0 +1,49 @@
+meta {
+  name: Update Global Configuration
+  type: http
+  seq: 2
+}
+
+patch {
+  url: {{base_url}}/v1/config/application
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "debug": false,
+    "sitename": ""
+  }
+}
+
+example {
+  name: 200 Response (config/application)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/config/application
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "debug": true,
+        "sitename": "The Name of the Site"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

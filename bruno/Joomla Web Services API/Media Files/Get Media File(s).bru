@@ -1,0 +1,75 @@
+meta {
+  name: Get Media File(s)
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/v1/media/files/{{file_path}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~filter[search]: 
+}
+
+example {
+  name: 200 Response
+  description: Media file or directory listing returned successfully.
+  
+  request: {
+    url: {{base_url}}/v1/media/files/{{file_path}}
+    method: GET
+    mode: none
+    params:query: {
+      ~filter[search]: 
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: 404 Response
+  description: Media file or directory not found.
+  
+  request: {
+    url: {{base_url}}/v1/media/files/{{file_path}}
+    method: GET
+    mode: none
+    params:query: {
+      ~filter[search]: 
+    }
+  }
+  
+  response: {
+    status: {
+      code: 404
+      text: Not Found
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

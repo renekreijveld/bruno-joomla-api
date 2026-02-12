@@ -1,0 +1,53 @@
+meta {
+  name: Update Contacts Category}
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/v1/contacts/categories/{{category_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "alias": "",
+    "note": "",
+    "parent_id": 0,
+    "title": ""
+  }
+}
+
+example {
+  name: 200 Response (contacts/categories/{category_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/contacts/categories/{{category_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "alias": "54031ae9-241c-4fc7-8a74-595547e4a1e3",
+        "note": "Esse voluptate consequatur et ad repellendus mollitia maiores.",
+        "parent_id": 1,
+        "title": "Incredible Cotton Car"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

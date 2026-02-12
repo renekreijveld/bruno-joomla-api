@@ -1,0 +1,49 @@
+meta {
+  name: languages/overrides/{app}/{lang_code}/{constant_id} (PATCH)
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/v1/languages/overrides/{{app}}/{{lang_code}}/{{constant_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "key": "",
+    "override": ""
+  }
+}
+
+example {
+  name: 200 Response (languages/overrides/{app}/{lang_code}/{constant_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/languages/overrides/{{app}}/{{lang_code}}/{{constant_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "key": "new_key",
+        "override": "new text"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

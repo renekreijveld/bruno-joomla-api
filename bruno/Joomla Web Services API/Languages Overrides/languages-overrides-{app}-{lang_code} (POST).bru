@@ -1,0 +1,49 @@
+meta {
+  name: languages/overrides/{app}/{lang_code} (POST)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/languages/overrides/{{app}}/{{lang_code}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "key": "",
+    "override": ""
+  }
+}
+
+example {
+  name: 200 Response (languages/overrides/{app}/{lang_code})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/languages/overrides/{{app}}/{{lang_code}}
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "key": "new_key",
+        "override": "text"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

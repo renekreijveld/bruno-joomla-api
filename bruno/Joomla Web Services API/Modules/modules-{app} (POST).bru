@@ -1,0 +1,102 @@
+meta {
+  name: modules/{app} (POST)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/modules/{{app}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "access": "",
+    "assigned": [],
+    "assignment": "",
+    "client_id": "",
+    "language": "",
+    "module": "",
+    "note": "",
+    "ordering": "",
+    "params": {
+      "bootstrap_size": "",
+      "cache": "",
+      "cache_time": "",
+      "cachemode": "",
+      "count": "",
+      "header_class": "",
+      "header_tag": "",
+      "layout": "",
+      "module_tag": "",
+      "moduleclass_sfx": "",
+      "style": ""
+    },
+    "position": "",
+    "publish_down": "",
+    "publish_up": "",
+    "published": "",
+    "showtitle": "",
+    "title": ""
+  }
+}
+
+example {
+  name: 200 Response (modules/{app})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/modules/{{app}}
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "access": "1",
+        "assigned": [
+          "101",
+          "105"
+        ],
+        "assignment": "0",
+        "client_id": "0",
+        "language": "*",
+        "module": "mod_articles_archive",
+        "note": "",
+        "ordering": "1",
+        "params": {
+          "bootstrap_size": "0",
+          "cache": "1",
+          "cache_time": "900",
+          "cachemode": "static",
+          "count": "10",
+          "header_class": "",
+          "header_tag": "h3",
+          "layout": "_:default",
+          "module_tag": "div",
+          "moduleclass_sfx": "",
+          "style": "0"
+        },
+        "position": "",
+        "publish_down": "",
+        "publish_up": "",
+        "published": "1",
+        "showtitle": "1",
+        "title": "Title"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

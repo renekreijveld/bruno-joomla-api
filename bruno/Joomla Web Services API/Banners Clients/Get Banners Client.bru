@@ -1,0 +1,36 @@
+meta {
+  name: Get Banners Client
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/v1/banners/clients/{{client_id}}
+  body: none
+  auth: inherit
+}
+
+example {
+  name: 200 Response
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/banners/clients/{{client_id}}
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

@@ -1,0 +1,36 @@
+meta {
+  name: modules/types/{app}
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/v1/modules/types/{{app}}
+  body: none
+  auth: inherit
+}
+
+example {
+  name: 200 Response
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/modules/types/{{app}}
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

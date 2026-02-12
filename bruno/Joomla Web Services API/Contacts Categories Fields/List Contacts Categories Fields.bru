@@ -1,0 +1,36 @@
+meta {
+  name: List Contacts Categories Fields
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/v1/fields/contacts/categories
+  body: none
+  auth: inherit
+}
+
+example {
+  name: 200 Response
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/fields/contacts/categories
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

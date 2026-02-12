@@ -1,0 +1,53 @@
+meta {
+  name: Add contact
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/v1/contacts
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "alias": "",
+    "catid": 0,
+    "language": "",
+    "name": ""
+  }
+}
+
+example {
+  name: 200 Response (contacts)
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/contacts
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "alias": "someones-name",
+        "catid": 4,
+        "language": "*",
+        "name": "Someones Name"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

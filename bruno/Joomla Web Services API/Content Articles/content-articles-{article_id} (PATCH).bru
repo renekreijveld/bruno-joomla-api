@@ -1,0 +1,49 @@
+meta {
+  name: content/articles/{article_id} (PATCH)
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/v1/content/articles/{{article_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "catid": 0,
+    "title": ""
+  }
+}
+
+example {
+  name: 200 Response (content/articles/{article_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/content/articles/{{article_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "catid": 64,
+        "title": "Updated article"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

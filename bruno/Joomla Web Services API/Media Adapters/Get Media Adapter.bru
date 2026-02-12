@@ -1,0 +1,88 @@
+meta {
+  name: Get Media Adapter
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/v1/media/adapters/{{adapter_id}}
+  body: none
+  auth: inherit
+}
+
+params:path {
+  adapter_id: 
+}
+
+example {
+  name: 200 Response
+  description: Media adapter retrieved successfully.
+  
+  request: {
+    url: {{base_url}}/v1/media/adapters/{{adapter_id}}
+    method: GET
+    mode: none
+    params:path: {
+      adapter_id: 
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "links": {
+            "self": ""
+          },
+          "data": {
+            "type": "",
+            "id": "",
+            "attributes": {
+              "provider_id": "",
+              "name": "",
+              "path": ""
+            }
+          }
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: 404 Response
+  description: Media adapter not found.
+  
+  request: {
+    url: {{base_url}}/v1/media/adapters/{{adapter_id}}
+    method: GET
+    mode: none
+    params:path: {
+      adapter_id: 
+    }
+  }
+  
+  response: {
+    status: {
+      code: 404
+      text: Not Found
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

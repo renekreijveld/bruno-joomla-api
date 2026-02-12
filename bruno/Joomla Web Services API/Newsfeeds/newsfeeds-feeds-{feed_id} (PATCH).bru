@@ -1,0 +1,61 @@
+meta {
+  name: newsfeeds/feeds/{feed_id} (PATCH)
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/v1/newsfeeds/feeds/{{feed_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "access": 0,
+    "alias": "",
+    "catid": 0,
+    "description": "",
+    "link": "",
+    "metadesc": "",
+    "metakey": "",
+    "name": ""
+  }
+}
+
+example {
+  name: 200 Response (newsfeeds/feeds/{feed_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/newsfeeds/feeds/{{feed_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "access": 1,
+        "alias": "test2",
+        "catid": 5,
+        "description": "",
+        "link": "https://samoylov/joomla/gsoc19_webservices/index.php",
+        "metadesc": "",
+        "metakey": "",
+        "name": "Test"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

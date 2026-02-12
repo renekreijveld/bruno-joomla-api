@@ -1,0 +1,51 @@
+meta {
+  name: fields/groups/content/articles/{group_id} (PATCH)
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/v1/fields/groups/content/articles/{{group_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "description": "",
+    "note": "",
+    "title": ""
+  }
+}
+
+example {
+  name: 200 Response (fields/groups/content/articles/{group_id})
+  description: todo: response object
+  
+  request: {
+    url: {{base_url}}/v1/fields/groups/content/articles/{{group_id}}
+    method: PATCH
+    mode: json
+    body:json: {
+      {
+        "description": "new description",
+        "note": "",
+        "title": "new article group"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
