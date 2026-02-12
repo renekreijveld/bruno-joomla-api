@@ -22,6 +22,8 @@ Your Joomla website is now ready to be used with webservices API and the Bruno c
 
 If you haven't done already, download and install Bruno from the URL [www.usebruno.com](https://www.usebruno.com).
 
+If you already have Bruno installed, make sure you uodate it to the latest version. The collection is tested with Bruno version 3.0.2.
+
 ### Install the collection
 
 Download this repository to your local machine. Unzip the file if needed. Once unzipped there is a folder **bruno** in the repository. Copy that folder and all its contents to a location on your machine where you want to keep the collection.
