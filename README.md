@@ -40,7 +40,7 @@ You now have set up the collection and you can start using the requests in the c
 
 ## Using the collection
 
-A simple test to see if the API endpoint are working is a GET on Config Application.
+A simple test to see if the API endpoint are working is a ```GET``` on Config Application.
 
 1. In the left sidebar click on **Joomla Web Services API** to expand the collection.
 2. Click on **Config Application** to open the requests.
